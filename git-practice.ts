@@ -113,17 +113,63 @@
 //Terminal command = git commit --amend --no-edit  - --amend = обновить последний commit, а --no-edit = сохранить его название Update project.
 //Terminal command = git status
 //ACTUAL RESULT:
+//[master ae19984] Update project
+//2 files changed, 92 insertions(+), 11 deletions(-)
+//On branch master
+//Branch is ahead of 'origin/master' by 1 commit.
+//nothing to commit, working tree clean
+
+//This means:
+//The second commit was successfully updated.
+//All changes are included in the second commit.
+//The working tree is clean.
+
+//Terminal command = git push
+//ACTUAL RESULT:
+//Enumerating objects: 7, done.
+//Counting objects: 100% (7/7), done.
+//Writing objects: 100% (4/4), done.
+//To https://github.com/vladimiropodobed/git-practice.git
+//95e81e1..ae19984  master -> master
+
+//This means:
+//The second commit was successfully pushed to GitHub.
+//The remote master branch now contains the latest changes. - второй commit ae19984 успешно отправлен на GitHub
 
 //STEP 15 — Create a new branch
-//
+//Terminal command = git switch -c feature-update - Эта команда создаст новую ветку feature-update и сразу переключает меня на неё.
+//Terminal command = git branch
 //ACTUAL RESULT:
+//Switched to a new branch 'feature-update'
+//* feature-update
+//  master
+
+//This means:
+//A new branch feature-update was created.
+//I am currently working on feature-update.
+//The master branch remains unchanged.
 
 //STEP 16 — Make changes on the new branch
-//
+//В самом конце git-practice.ts, после STEP 21, добавлено:
+// STEP 16 practice change
+//This change was made on the feature-update branch.
+
+//STEP 16 practice change
+//This change was made on the feature-update branch.
+//Terminal command = git status
 //ACTUAL RESULT:
+//On branch feature-update
+
+//Changes not staged for commit:
+//    modified: git-practice.ts
+
+//This means:
+//A change was made in git-practice.ts.
+//The change exists only in the feature-update branch.
+//The change has not been staged or committed yet.
 
 //STEP 17 — Create a commit on the new branch
-//
+//Terminal command = git add git-practice.ts - Добавляем изменение в staging
 //ACTUAL RESULT:
 
 //STEP 18 — Push the branch to GitHub
@@ -141,3 +187,6 @@
 //STEP 21 — Check the final result
 //
 //ACTUAL RESULT:
+
+//STEP 16 practice change - Это мое изменение только в новой ветке.
+//This change was made on the feature-update branch.
