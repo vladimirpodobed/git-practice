@@ -251,3 +251,20 @@
 //05f1679 Merge pull request #1 from vladimiropodobed/feature-update
 
 //The Git practice is completed successfully.
+
+//STEP 23 — Финальная проверка изменений после выполнения Git practice
+//1. Проверяем статус:
+//Terminal command = git status
+//EXPECTED RESULT: modified: git-practice.ts
+
+//2. Добавляем изменения в staging:
+//Terminal command = git add git-practice.ts
+
+//3. Создаём финальный commit:
+//Terminal command = git commit -m "Complete Git practice notes"
+
+//4. Отправляем финальный commit на GitHub:
+//Terminal command = git push
+
+//5. Обновляем страницу GitHub:
+//Browser command = Ctrl + F5
