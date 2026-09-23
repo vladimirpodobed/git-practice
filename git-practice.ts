@@ -136,7 +136,7 @@
 //The second commit was successfully pushed to GitHub.
 //The remote master branch now contains the latest changes. - второй commit ae19984 успешно отправлен на GitHub
 
-//STEP 15 — Create a new branch
+//⚠️ STEP 15 — Create a new branch
 //Terminal command = git switch -c feature-update - Эта команда создаст новую ветку feature-update и сразу переключает меня на неё.
 //Terminal command = git branch
 //ACTUAL RESULT:
@@ -149,7 +149,7 @@
 //I am currently working on feature-update.
 //The master branch remains unchanged.
 
-//STEP 16 — Make changes on the new branch
+//⚠️ STEP 16 — Make changes on the new branch
 //В самом конце git-practice.ts, после STEP 21, добавлено:
 // STEP 16 practice change
 //This change was made on the feature-update branch.
@@ -168,25 +168,86 @@
 //The change exists only in the feature-update branch.
 //The change has not been staged or committed yet.
 
-//STEP 17 — Create a commit on the new branch
+//⚠️ STEP 17 — Create a commit on the new branch
 //Terminal command = git add git-practice.ts - Добавляем изменение в staging
-//ACTUAL RESULT:
+//Terminal command = git commit -m "Add feature branch change"
+//ACTUAL RESULT: commit на feature-update создан успешно:
+//[feature-update 927c93c] Add feature branch change
+// 1 file changed, 53 insertions(+), 4 deletions(-)
 
-//STEP 18 — Push the branch to GitHub
-//
+//⚠️ STEP 18 — Push the branch to GitHub
+//Terminal command = git push -u origin feature-update - отправил локальную ветку feature-update на GitHub и установит связь: feature-update → origin/feature-update
 //ACTUAL RESULT:
+//The feature-update branch was successfully pushed to GitHub.
+//GitHub created the remote branch feature-update.
+//The local branch feature-update is now tracking origin/feature-update.
+//GitHub provided a link to create a Pull Request: https://github.com/vladimirodobed/git-practice/pull/new/feature-update
 
-//STEP 19 — Open a Pull Request
-//
+//⚠️ STEP 19 — Open a Pull Request
+//Terminal command = git push -u origin feature-update - command pushes the feature-update branch to GitHub.
 //ACTUAL RESULT:
+//GitHub created a link to open a Pull Request:
+//https://github.com/vladimirodobed/git-practice/pull/new/feature-update
 
-//STEP 20 — Merge the Pull Request into the main branch
-//
-//ACTUAL RESULT:
+//On GitHub:
+//Base branch = master
+//Compare branch = feature-update
+//GitHub showed: Able to merge - the branches can be merged automatically without conflicts.
 
-//STEP 21 — Check the final result
-//
+//Pull Request title = Add feature branch change
+//Pull Request was created successfully.
+
+//The Pull Request contains 1 commit with the changes from the feature-update branch.
+
+//⚠️ STEP 20 — Merge the Pull Request into the main branch
+//On GitHub:
+//Pull Request = feature-update → master
+//GitHub showed: No conflicts with base branch
+
+//Terminal command is not required for this step because
+//the Pull Request is merged directly on GitHub.
+
+//Action = click "Merge pull request"
+//Then = click "Confirm merge"
+
 //ACTUAL RESULT:
+//The Pull Request was successfully merged into the master branch.
+//The feature-update changes are now included in master.
+//The Pull Request was automatically closed after the merge.
+
+//⚠️ STEP 21 — Check the final result
+//On GitHub:
+//Selected branch = master
+//ACTUAL RESULT:
+//The changes from feature-update are now included in master.
+//The Pull Request was successfully merged.
+//The feature-update branch was merged into master.
+
+//The GitHub repository now contains:
+//- Initial commit
+//- Update project commit
+//- Feature branch change
+
+//The Git workflow practice is completed successfully.
 
 //STEP 16 practice change - Это мое изменение только в новой ветке.
 //This change was made on the feature-update branch.
+
+//⚠️ STEP 22 — Локальная проверка после merge с GitHubЖ
+//Terminal command = git switch master
+//Terminal command = git status
+//Terminal command = git log --oneline --graph --all
+//
+//ACTUAL RESULT:
+//Working branch: master
+//master is synchronized with origin/master.
+//Pull Request #1 was successfully merged into master.
+//The merge commit 05f1679 was created.
+//The feature branch commit 927c93c is now part of the master history.
+//The final Git history contains:
+//95e81e1 Initial commit
+//ae19984 Update project
+//927c93c Add feature branch change
+//05f1679 Merge pull request #1 from vladimiropodobed/feature-update
+
+//The Git practice is completed successfully.
